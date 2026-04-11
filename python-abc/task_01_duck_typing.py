@@ -8,7 +8,7 @@ import math
 
 
 class Shape(ABC):
-    """Abstract base class for all shapes."""
+    """Abstract class for shapes."""
 
     @abstractmethod
     def area(self):
@@ -22,42 +22,42 @@ class Shape(ABC):
 
 
 class Circle(Shape):
-    """Class representing a circle."""
+    """Concrete class Circle."""
 
     def __init__(self, radius):
-        """Initializes the circle with a radius."""
+        """Initialize Circle with radius."""
         self.radius = radius
 
     def area(self):
-        """Returns the area of the circle."""
+        """Return the area of the circle."""
         return math.pi * (self.radius ** 2)
 
     def perimeter(self):
-        """Returns the perimeter of the circle."""
+        """Return the perimeter of the circle."""
         return 2 * math.pi * self.radius
 
 
 class Rectangle(Shape):
-    """Class representing a rectangle."""
+    """Concrete class Rectangle."""
 
     def __init__(self, width, height):
-        """Initializes the rectangle with width and height."""
+        """Initialize Rectangle with width and height."""
         self.width = width
         self.height = height
 
     def area(self):
-        """Returns the area of the rectangle."""
+        """Return the area of the rectangle."""
         return self.width * self.height
 
     def perimeter(self):
-        """Returns the perimeter of the rectangle."""
+        """Return the perimeter of the rectangle."""
         return 2 * (self.width + self.height)
 
 
-def shape_info(shape):
+def shape_info(obj):
     """
     Prints the area and perimeter of a shape using duck typing.
-    Does not check the type, only calls the required methods.
+    It doesn't check if obj is an instance of Shape, just calls the methods.
     """
-    print("Area: {}".format(shape.area()))
-    print("Perimeter: {}".format(shape.perimeter()))
+    print("Area: {}".format(obj.area()))
+    print("Perimeter: {}".format(obj.perimeter()))
