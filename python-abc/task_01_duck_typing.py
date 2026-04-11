@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 This module defines an abstract class Shape and its subclasses
 Circle and Rectangle, demonstrating duck typing.
